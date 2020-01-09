@@ -1,13 +1,14 @@
 # Configura DigitalOcean Provider
 provider "digitalocean" {
   token = "${var.token}"
+  api_endpoint = "${var.api_endpoint}"
 }
 
 # Cria Droplet
 resource "digitalocean_droplet" "droplet" {
   image  = "${var.image_list[var.image_index]}"
-  name   = "web-1"
+  name   = "${var.droplet_name}"
   region = "${var.region_list[var.region_index]}"
-  size   = "s-1vcpu-1gb"
+  size   = "${var.size_list[var.size_index]}"
 }
 

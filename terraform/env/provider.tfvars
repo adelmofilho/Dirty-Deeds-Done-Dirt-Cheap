@@ -1,3 +1,5 @@
+api_endpoint = "https://api.digitalocean.com"
+
 region_list = [    
     "ams2",
     "ams3",
@@ -35,4 +37,27 @@ image_list = [
     "ubuntu-18-04-x64",
     "ubuntu-16-04-x32",
     "ubuntu-16-04-x64"
+]
+
+size_list = [
+    "512mb",
+    "s-1vcpu-1gb",
+    "1gb",
+    "s-1vcpu-2gb",
+    "s-1vcpu-3gb",
+    "s-2vcpu-2gb",
+    "s-3vcpu-1gb",
+    "2gb",
+    "s-2vcpu-4gb",
+    "4gb",
+    "c-2",
+    "m-1vcpu-8gb",
+    "s-4vcpu-8gb",
+    "g-2vcpu-8gb",
+    "gd-2vcpu-8gb",
+    "m-16gb",
+    "8gb",
+    "c-4",
+    "s-6vcpu-16gb",
+    "m-2vcpu-16gb"
 ]
