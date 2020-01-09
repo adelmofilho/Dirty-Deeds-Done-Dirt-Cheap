@@ -2,6 +2,7 @@
 *.zip
 credentials/*.json
 credentials/*.csv
+credentials/id_rsa*
 env/keys.tfvars
 
 # Local .terraform directories

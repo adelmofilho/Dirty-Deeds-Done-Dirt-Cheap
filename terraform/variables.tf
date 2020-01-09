@@ -42,3 +42,38 @@ variable "droplet_name" {
     type = string
     description = "Instance Name."
 }
+
+variable "ssh_key_file" {
+    type = string
+    description = "Relative path of ssh keys."
+}
+
+variable "tags" {
+    type = list(string)
+    description = "Relative path of ssh keys."
+}
+
+variable "backups" {
+    type = bool
+    description = "Relative path of ssh keys."
+}
+
+variable "monitoring" {
+    type = bool
+    description = "Relative path of ssh keys."
+}
+
+variable "ipv6" {
+    type = bool
+    description = "Relative path of ssh keys."
+}
+
+variable "private_networking" {
+    type = bool
+    description = "Relative path of ssh keys."
+}
+
+variable "resize_disk" {
+    type = bool
+    description = "Relative path of ssh keys."
+}
