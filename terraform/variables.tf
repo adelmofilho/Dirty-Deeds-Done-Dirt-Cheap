@@ -43,9 +43,19 @@ variable "droplet_name" {
     description = "Instance Name."
 }
 
-variable "ssh_key_file" {
+variable "ssh_public_key" {
     type = string
-    description = "Relative path of ssh keys."
+    description = "Relative path of public ssh key."
+}
+
+variable "ssh_private_key" {
+    type = string
+    description = "Relative path of private ssh key."
+}
+
+variable "ssh_key_name" {
+    type = string
+    description = "Name of exported ssh key."
 }
 
 variable "tags" {
@@ -76,4 +86,19 @@ variable "private_networking" {
 variable "resize_disk" {
     type = bool
     description = "Relative path of ssh keys."
+}
+
+variable "connection_user" {
+    type = string
+    description = "Name of exported ssh key."
+}
+
+variable "connection_type" {
+    type = string
+    description = "Name of exported ssh key."
+}
+
+variable "connection_timeout" {
+    type = string
+    description = "Name of exported ssh key."
 }

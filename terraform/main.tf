@@ -4,13 +4,13 @@ provider "digitalocean" {
   api_endpoint = "${var.api_endpoint}"
 }
 
-# Cria nova chave ssh
+# Exporta nova chave ssh
 resource "digitalocean_ssh_key" "ssh_key" {
-  name       = "Ten Thousand Demonic Beast Array"
-  public_key = file("${var.ssh_key_file}")
+  name       = "${var.ssh_key_name}"
+  public_key = file("${var.ssh_public_key}")
 }
 
-# Cria Droplet
+# Cria nova instância (droplet)
 resource "digitalocean_droplet" "droplet" {
   image    = "${var.image_list[var.image_index]}"
   name     = "${var.droplet_name}"
@@ -25,13 +25,11 @@ resource "digitalocean_droplet" "droplet" {
   private_networking = "${var.private_networking}"
   resize_disk = "${var.resize_disk}"
 
+  # Configura acesso à instância
   connection {
-      user = "root"
-      type = "ssh"
-      private_key = "${file("../credentials/id_rsa")}"
-      timeout = "2m"
+      user = "${var.connection_user}"
+      type = "${var.connection_type}"
+      private_key = file("${var.ssh_private_key}")
+      timeout = "${var.connection_timeout}"
   }
-
-
-
 }
