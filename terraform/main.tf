@@ -24,4 +24,14 @@ resource "digitalocean_droplet" "droplet" {
   ipv6 = "${var.ipv6}"
   private_networking = "${var.private_networking}"
   resize_disk = "${var.resize_disk}"
+
+  connection {
+      user = "root"
+      type = "ssh"
+      private_key = "${file("../credentials/id_rsa")}"
+      timeout = "2m"
+  }
+
+
+
 }
