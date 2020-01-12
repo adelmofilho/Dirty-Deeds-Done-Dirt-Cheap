@@ -4,13 +4,17 @@ Projeto de provisionamento e gerenciamento de instâncias da [DigitalOcean](http
 
 <br>
 
-## Descrição
+## Features Implementadas
 
+- [x] Criação de instância (droplet) com acesso via ssh
 
+- [ ] Provisionamento de softwares de segurança (fail2ban, ufw)
+
+- [ ] Provisionamento de docker
 
 <br>
 
-## Como utilizar
+## Utilização
 
 **Passo 1**: Crie um API token na [DigitalOcean](https://cloud.digitalocean.com/account/api/tokens) e salve-o.
 
@@ -59,8 +63,9 @@ sh destroy.sh
 
 ## FAQ
 
-**Por quê utilizar a DigitalOcean e não outros provedores como AWS, GCP, Azure?**
+**Por quê utilizar a DigitalOcean e não outros provedores de cloud como AWS, GCP, Azure?**
 
 ```
-
+Menor Preço.
 ```
+
