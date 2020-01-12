@@ -14,7 +14,7 @@ variable "api_endpoint" {
 }
 
 /*
-*   digitalocean_ssh_key  Data Source Settings 
+*   digitalocean_ssh_key Data Source Settings 
 *   https://www.terraform.io/docs/providers/do/index.html
 */
 

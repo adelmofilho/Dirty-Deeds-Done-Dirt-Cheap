@@ -1,16 +1,28 @@
-# Configura DigitalOcean Provider
+/*
+*   DigitalOcean Provider 
+*   https://www.terraform.io/docs/providers/do/index.html
+*/
+
 provider "digitalocean" {
   token = "${var.token}"
   api_endpoint = "${var.api_endpoint}"
 }
 
-# Exporta nova chave ssh
+/*
+*   digitalocean_ssh_key Resource
+*   https://www.terraform.io/docs/providers/do/d/ssh_key.html
+*/
+
 resource "digitalocean_ssh_key" "ssh_key" {
   name       = "${var.ssh_key_name}"
   public_key = file("${var.ssh_public_key}")
 }
 
-# Cria nova instância (droplet)
+/*
+*   digitalocean_droplet Resource 
+*   https://www.terraform.io/docs/providers/do/index.html
+*/
+
 resource "digitalocean_droplet" "droplet" {
   image    = "${var.image_list[var.image_index]}"
   name     = "${var.droplet_name}"
@@ -25,7 +37,11 @@ resource "digitalocean_droplet" "droplet" {
   private_networking = "${var.private_networking}"
   resize_disk = "${var.resize_disk}"
 
-  # Configura acesso à instância
+  /*
+  *   Provisioner Connection
+  *   https://www.terraform.io/docs/provisioners/connection.html
+  */
+  
   connection {
       user = "${var.connection_user}"
       type = "${var.connection_type}"
