@@ -68,4 +68,3 @@ sh destroy.sh
 ```
 Menor Preço.
 ```
-
