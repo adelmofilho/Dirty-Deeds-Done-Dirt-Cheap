@@ -1,0 +1,3 @@
+out/*.tfplan
+env/keys.tfvars
+*.swp
