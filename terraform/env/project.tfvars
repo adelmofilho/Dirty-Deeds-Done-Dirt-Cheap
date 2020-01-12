@@ -26,6 +26,7 @@ connection_timeout = "1m"
 
 /*
 *   Selected size, image and region based on provider's list
+*   See provider.tfvars to catch index order
 *   https://developers.digitalocean.com/documentation/v2/#introduction
 */
 
