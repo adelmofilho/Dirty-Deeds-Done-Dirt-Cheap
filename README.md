@@ -1,6 +1,14 @@
-# Dirty Deeds Done Dirt Cheap
+# Dirty Deeds Done Dirt Cheap <img src="https://vignette.wikia.nocookie.net/jjba/images/4/4d/D4c_sbr69.png/revision/latest?cb=20160323142852" align="right" height=140/>
 
 Projeto de provisionamento e gerenciamento de instâncias da [DigitalOcean](https://www.digitalocean.com/) através de ferramentas de Infra as a Code.
+
+<br>
+
+## Descrição
+
+
+
+<br>
 
 ## Como utilizar
 
@@ -45,4 +53,14 @@ sh connect.sh
 
 ```
 sh destroy.sh
+```
+
+<br>
+
+## FAQ
+
+**Por quê utilizar a DigitalOcean e não outros provedores como AWS, GCP, Azure?**
+
+```
+
 ```
