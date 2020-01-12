@@ -4,7 +4,7 @@ droplet_name = "Black-Scaled-Earth-Dragon"
 tags = ["production", "standalone-server"]
 
 # Connection 
-ssh_key_name    = "Ten Thousand Demonic Beast Array"
+ssh_key_name    = "Ten-Thousand-Demonic-Beast-Array"
 ssh_public_key  = "../credentials/id_rsa.pub"
 ssh_private_key = "../credentials/id_rsa"
 

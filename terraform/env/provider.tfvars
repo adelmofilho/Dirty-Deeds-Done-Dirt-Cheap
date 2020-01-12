@@ -1,4 +1,14 @@
+/*
+*   DigitalOcean API endpoint
+*   https://developers.digitalocean.com/documentation/v2/#introduction
+*/
+
 api_endpoint = "https://api.digitalocean.com"
+
+/*
+*   List of all regions
+*   https://developers.digitalocean.com/documentation/v2/#regions
+*/
 
 region_list = [    
     "ams2",
@@ -14,6 +24,11 @@ region_list = [
     "sgp1",
     "tor1"
 ]
+
+/*
+*   List of all images
+*   https://developers.digitalocean.com/documentation/v2/#images
+*/
 
 image_list = [  
     "coreos-beta",
@@ -38,6 +53,11 @@ image_list = [
     "ubuntu-16-04-x32",
     "ubuntu-16-04-x64"
 ]
+
+/*
+*   List of all sizes
+*   https://developers.digitalocean.com/documentation/v2/#sizes
+*/
 
 size_list = [
     "512mb",
