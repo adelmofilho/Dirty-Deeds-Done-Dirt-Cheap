@@ -1,13 +1,7 @@
 #!/bin/sh
 
-cd terraform/
-
 terraform_dir=`which terraform`
 
-ip=`$terraform_dir output instance_ip_address`
+cd terraform/ && droplet_ip=`$terraform_dir output instance_ip_address`
 
-echo $ip
-
-cd ../
-
-ssh root@$ip -i ${PWD}/credentials/id_rsa
+ssh root@$droplet_ip -i ../credentials/id_rsa
