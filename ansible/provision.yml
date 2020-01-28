@@ -1,0 +1,63 @@
+- hosts: all
+  become: yes
+  tasks:
+    - name: create the 'ubuntu' user
+      user: name=ubuntu append=yes state=present createhome=yes shell=/bin/bash
+
+    - name: allow 'ubuntu' to have passwordless sudo
+      lineinfile:
+        dest: /etc/sudoers
+        line: 'ubuntu ALL=(ALL) NOPASSWD: ALL'
+        validate: 'visudo -cf %s'
+
+    - name: Set authorized key taken from file
+      authorized_key:
+        user: ubuntu
+        state: present
+        key: '{{ item }}'
+      with_file:
+        - ../credentials/id_rsa.pub
+
+    - name: install Docker  
+      apt:
+        name: docker.io
+        state: present
+        update_cache: true
+
+    - name: add $user to docker group
+      user:
+        name: ubuntu
+        group: docker
+
+    - name: install apt fail2ban packages
+      apt: 
+        name: "{{ item }}"   
+        state: latest
+        update_cache: yes
+        cache_valid_time: 3600
+      with_items:
+        - fail2ban
+        - sendmail
+
+    - name: override the basic fail2ban configuration with .local file
+      copy:
+        src: ../ansible/jail.local
+        dest: /etc/fail2ban/jail.local
+        owner: root
+        group: root
+        mode: 0644
+
+    - name: override the basic sshd configuration
+      copy:
+        src: ../ansible/sshd_config
+        dest: /etc/ssh/sshd_config
+        owner: root
+        group: root
+        mode: 0644
+
+    - ufw:
+        rule: allow
+        name: OpenSSH
+
+    - ufw:
+        state: enabled
