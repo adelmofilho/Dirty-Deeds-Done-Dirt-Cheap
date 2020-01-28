@@ -46,6 +46,14 @@ vim terraform/env/project.tfvars
 sh create.sh
 ```
 
+Durante a criação da instância você será questionado a conectar à instância para executar os playbook em ansible
+
+> Are you sure you want to continue connecting (yes/no)?
+
+Responda com `yes` e siga apertando `enter`.
+
+Nos futuros releases isso não será mais necessário.
+
 **Passo 6**: Acesse sua nova instância via ssh, execurando o shell script `connect.sh`.
 
 

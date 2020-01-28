@@ -41,11 +41,22 @@ resource "digitalocean_droplet" "droplet" {
   *   Provisioner Connection
   *   https://www.terraform.io/docs/provisioners/connection.html
   */
+
+  provisioner "remote-exec" {
+    inline = ["sudo apt-get install -y python"]
+  }
   
   connection {
       user = "${var.connection_user}"
       type = "${var.connection_type}"
       private_key = file("${var.ssh_private_key}")
       timeout = "${var.connection_timeout}"
+      host = "${self.ipv4_address}"
   }
+
+  provisioner "local-exec" {
+    working_dir = "../ansible/"
+    command     = "ansible-playbook -u root --private-key ${var.ssh_private_key} provision.yml -i ${self.ipv4_address},"
+  }
+
 }
