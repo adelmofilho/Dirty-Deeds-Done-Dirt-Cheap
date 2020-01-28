@@ -58,3 +58,6 @@
     - ufw:
         rule: allow
         name: OpenSSH
+
+    - ufw:
+        state: enabled
