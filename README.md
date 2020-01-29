@@ -31,6 +31,8 @@ O projeto foi desenhado para uso em uma máquina linux com os seguintes software
 
 Instruções para instalação desses softwares podem ser encontradas [AQUI](https://learn.hashicorp.com/terraform/getting-started/install.html), [AQUI](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html) e [AQUI](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
 
+Além disso, crie um conta na Digital Ocean. Caso deseje, use meu [link](https://m.do.co/c/2e5764a6d681).
+
 ## Utilização
 
 **Passo 1**: Crie um API token na [DigitalOcean](https://cloud.digitalocean.com/account/api/tokens) e salve-o.
